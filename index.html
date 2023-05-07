@@ -1,0 +1,128 @@
+<!--
+reNamso v1 is th new and modern Namso CCGEN.
+RE-WRITED BY YAEL MASSIEU.
+Telegram: @yaelmassieu
+Portfolio: https://yael.pages.dev/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reNamso V1 - Yael Massieu</title>
+  <meta name="description" content="Credit Card Generator">
+  <meta name="keywords"
+    content="namso,ccgen,ccgen online,namso online, card, cc, bin,generador tarjetas,tarjetas,generador, bin check, bin search, bin find, find bin, check bin, search bin, bank identification number, bin, iin, issuer identification number, check iin, find iin, search iin, iin check, iin search, iin find, bank, card search, card check, card find, merchant bin, merchant, bin lookup, bin checker, bin list, carding, carder, generate cc, namso, ccgen, credit card, infocc, bin, gerador de cartões de créditos, tarjetas, generator, darkside, checker cc, gerador, bins, gerar cc, mastercard, visa, amex, discover, diners club">
+  <meta name="author" content="Yael Massieu">
+  <link rel="icon" href="assets/img/renamso.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <div class="title"><img src="assets/img/renamso.svg" alt="Icon"> reNamso V1</div>
+    <div class="hh-title"> Credit Card Generator</div>
+    <div class="p" id="cards">
+      <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> <i
+        class="fa-brands fa-cc-amex"></i> <i class="fa-brands fa-cc-discover"></i> <i class="fa-brands fa-cc-jcb"></i>
+      <i class="fa-brands fa-cc-diners-club"></i>
+    </div>
+  </header>
+  <form name="console" id="console" class="form-horizontal" role="form">
+    <div class="p">
+      <div class="Ilabel"><i class="fa-solid fa-credit-card"></i> BIN </div><input type="text" class="input_text s"
+        id="ccpN" value="" style="width: 175px" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" required>
+    </div><select id="ccnsp" class="input_text" style="display:none;">
+      <option selected="selected">Nenhum</option>
+    </select>
+    <div class="p">
+      <div class="Ilabel"><i class="fa-solid fa-circle-plus"></i> Add </div>
+      <div class="input_text s"><label>Date<input type="checkbox" id="ccexpdat"></label>
+        <label>CCV<input type="checkbox" id="ccvi"></label>
+        <label>Info<input type="checkbox" id="ccbank" name="ccbank"></label>
+      </div>
+    </div>
+    <div class="p">
+      <div class="card-group">
+        <div class="Ilabel"><i class="fa-solid fa-list"></i> Amount </div><input class="input_text" type="number"
+          id="ccghm" style="width: 40px" maxlength="4" value="10">
+        <div class="Ilabel"><i class="fa-solid fa-file-code"></i> Format</div> <select id="ccoudatfmt"
+          class="input_text">
+          <option value="CHECKER" selected="selected">CHECKER</option>
+        </select>
+      </div>
+    </div>
+    <div class="crad-group">
+      <div class="p">
+        <div class="Ilabel"><i class="fa-solid fa-address-card"></i> CCV</div><input type="text" id="eccv" maxlength="4"
+          style="width: 40px" value="rnd" class="input_text" name="eccv">
+        <div class="Ilabel"><i class="fa-solid fa-calendar-day"></i> Month </div> <select id="emeses"
+          class="input_text">
+          <option value="rnd">Rnd</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <div class="Ilabel"><i class="fa-solid fa-calendar-week"></i> Year </div><select id="eyear" class="input_text">
+          <option value="rnd">Rnd</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+          <option value="2031">2031</option>
+          <option value="2032">2032</option>
+          <option value="2033">2033</option>
+          <option value="2034">2034</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="Lbutton" type="button" name="generar" id="generar"><i class="fa-solid fa-cog fa-spin"></i> Generate
+      Cards</button>
+    <center>
+      <div class="eighty">
+        <div>
+          <div class="clean" id="cleanText"></div>
+        </div><textarea class="textarea" name="output2" id="output2" rows="11" readonly=""></textarea>
+      </div>
+    </center>
+  </form>
+  <footer>
+    <p class="boldy main"><i class="fa-solid fa-globe"></i> reNamso V1</p>
+    <p class="boldy info"><i class="fa-solid fa-circle-info"></i> reNamso is a Modern Generator based on the old Namso
+      CCGEN. It is completely rewritten by Yael Massieu.</p>
+    <p class="boldy"><i class="fa-solid fa-code"></i> Free, No Ads & Open Source</p>
+    <p class="boldy"><i class="fa-solid fa-user-check"></i> Developer: <a href="https://yael.pages.dev/"
+        target="_blank">Yael Massieu</a></p>
+    <p class="boldy"><i class="fa-solid fa-link"></i> My Github profile: <a href="https://github.com/bystrokr"
+        target="_blank">bystrokr</a></p>
+    <p class="boldy"><i class="fa-solid fa-link"></i> SOURCE CODE <a href="https://github.com/bystrokr/reNamso"
+        target="_blank">HERE</a></p>
+    <p class="boldy info"><i class="fa-regular fa-copyright"></i> Copyright: <span id="date"></span></p>
+  </footer>
+  <script type="text/javascript" src="assets/js/gen.js"></script>
+</body>
+
+</html>

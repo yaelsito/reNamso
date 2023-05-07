@@ -1,0 +1,412 @@
+/*
+reNamso v1 is th new and modern Namso CCGEN.
+RE-WRITED BY YAEL MASSIEU.
+Telegram: @yaelmassieu
+Portfolio: https://yael.pages.dev/
+*/
+:root {
+	color-scheme: dark;
+	--princi: #212121;
+	--secund: #0699E2;
+	--label: #2B2B35;
+	--font-princi: 'Orbitron', sans-serif;
+	--font-secund: 'Poppins', sans-serif;
+	--rg1: rgba(0, 0, 0, .075);
+	--rg2: rgba(30, 162, 228, 1);
+	--info: #96D3F2;
+}
+
+body {
+	margin: 0;
+	background: var(--princi);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+header {
+	color: var(--secund);
+}
+
+a {
+	color: var(--info);
+}
+
+.title {
+	text-align: center;
+	font-family: var(--font-princi);
+	text-shadow: 0px 0px 20px #FFFFFF;
+	font-size: 2rem;
+	margin-top: 25px;
+	margin-bottom: 3px;
+	text-shadow: 0px 0px 15px var(--secund);
+}
+
+
+.title img {
+	display: inline-block;
+	height: 2.5rem;
+	vertical-align: middle;
+}
+
+.hh-title {
+	text-align: center;
+	font-family: var(--font-princi);
+	font-size: 10;
+	margin-bottom: 5px;
+}
+
+#cards {
+	text-align: center;
+	color: #ebebeb;
+}
+
+
+form#console {
+	text-align: center;
+}
+
+.Ilabel,
+.input_text,
+.input_texts {
+	display: -webkit-inline-box;
+	font-family: var(--font-secund);
+	font-size: 16px;
+}
+
+.Ilabel {
+	background-color: #222222;
+	padding: 3px;
+	padding-right: 5px;
+	border-radius: 5px 0 0 5px;
+	border-right: 1px solid var(--secund);
+	border-left: 1px solid var(--secund);
+	border-top: 1px solid var(--secund);
+	color: var(--secund);
+	border-color: var(--secund);
+	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
+	box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
+}
+
+.input_text {
+	padding: 3px;
+	border: 0;
+	border-bottom: 1px solid var(--secund);
+	border-right: 1px solid var(--secund);
+	border-top: 1px solid var(--secund);
+	border-radius: 0 5px 5px 0;
+	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
+	box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
+	vertical-align: bottom;
+	outline: none;
+	font-size: 16px;
+	color: #ebebeb;
+	background-color: var(--label);
+}
+
+select.input_text {
+	margin-left: -3px;
+	font-size: 16px;
+	background-color: var(--label);
+}
+
+.p {
+	display: block;
+	margin-bottom: 12px;
+}
+
+p.boldy {
+	font-weight: 700;
+}
+
+p.boldy.info {
+	color: var(--info);
+	font-weight: 700;
+}
+
+p.boldy.main {
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.s {
+	margin-left: -5px;
+	background: white;
+	padding: 3px;
+	background: var(--label);
+}
+
+.input_text>label {
+	cursor: pointer;
+}
+
+.clean {
+	background: var(--princi) url('../img/close.png') 0 0 no-repeat;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+	float: right;
+	margin: 0 -12px -12px 0;
+	position: relative;
+	transition: all 0.5s;
+	-webkit-transition: all .5s;
+}
+
+.clean:hover {
+	background: var(--princi) url('../img/close.png') 0 0 no-repeat;
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.cleanit {
+	background: var(--princi) url('../img/close.png') 0 0 no-repeat;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+	float: right;
+	position: relative;
+	transition: all 0.5s;
+	-webkit-transition: all .5s;
+}
+
+.cleanit:hover {
+	background: rgba(0, 0, 0, 0.87) url('../img/close.png') 0 0 no-repeat;
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.eighty {
+	margin-top: 10px;
+	width: 50%;
+}
+
+
+.Lbutton {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, var(--princi)), color-stop(1, var(--princi)));
+	background: -moz-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: -webkit-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: -o-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: -ms-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: linear-gradient(to bottom, var(--princi) 5%, var(--princi) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--princi)', endColorstr='var(--princi)', GradientType=0);
+	background-color: var(--princi);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	display: inline-block;
+	cursor: pointer;
+	font-family: 'Courier New';
+	font-size: 1px;
+	font-weight: bold;
+	padding: 5px 30px;
+	text-decoration: none;
+}
+
+.Lbutton:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, var(--princi)), color-stop(1, var(--princi)));
+	background: -moz-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: -webkit-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: -o-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: -ms-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
+	background: linear-gradient(to bottom, var(--princi) 5%, var(--princi) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--princi)', endColorstr='var(--princi)', GradientType=0);
+	background-color: var(--princi);
+}
+
+.Lbutton:active {
+	position: relative;
+	top: 1px;
+}
+
+.Lbutton {
+	border: 1px solid var(--secund);
+	color: var(--secund);
+	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 15px var(--rg2);
+	box-shadow: inset 0 1px 1px var(--rg1), 0 0 15px var(--rg2);
+}
+
+.Lbutton:hover,
+.Lbutton:focus,
+.Lbutton:active,
+.Lbutton.active,
+.open>.dropdown-toggle.Lbutton {
+	color: var(--secund);
+	border-color: var(--secund);
+	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+	box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+}
+
+
+.textarea {
+	background-color: var(--label);
+	border-bottom: 2px solid #2A203F;
+	border-color: var(--secund);
+	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+	box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+	width: 100%;
+	color: #ebebeb;
+	font-size: 16px;
+	margin-bottom: 10px;
+	outline: none;
+	font-family: var(--font-secund);
+	font-weight: 500;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-align: center;
+}
+
+.textarea::-webkit-scrollbar {
+	width: 5px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+	background: var(--secund);
+}
+
+
+footer {
+	text-align: center;
+	font-family: var(--font-princi);
+	color: var(--secund);
+	font-size: 13px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	.eighty {
+		margin-top: 5px;
+		width: 80%;
+	}
+
+	.textarea {
+		font-size: 13px;
+	}
+
+	.Lbutton {
+		font-size: 13px;
+		font-weight: bold;
+		padding: 8px 17px;
+	}
+}
+
+@media only screen and (min-width: 321px) {
+	.eighty {
+		margin-top: 5px;
+		width: 80%;
+	}
+
+	.textarea {
+		font-size: 13px;
+	}
+
+	.Lbutton {
+		font-size: 13px;
+		font-weight: bold;
+		padding: 8px 17px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.eighty {
+		margin-top: 5px;
+		width: 80%;
+	}
+
+	.textarea {
+		font-size: 13px;
+	}
+
+	.Lbutton {
+		font-size: 13px;
+		font-weight: bold;
+		padding: 8px 17px;
+	}
+}
+
+@media only screen and (min-width: 481px) {
+	.eighty {
+		margin-top: 5px;
+		width: 80%;
+	}
+
+	.textarea {
+		font-size: 16px;
+	}
+
+	.Lbutton {
+		font-size: 24px;
+		font-weight: bold;
+		padding: 8px 20px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.eighty {
+		margin-top: 5px;
+		width: 80%;
+	}
+
+	.textarea {
+		font-size: 13px;
+	}
+
+	.Lbutton {
+		font-size: 13px;
+		font-weight: bold;
+		padding: 8px 17px;
+	}
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 767px) {
+	.eighty {
+		margin-top: 5px;
+		width: 80%;
+	}
+
+	.textarea {
+		font-size: 16px;
+	}
+
+	.Lbutton {
+		font-size: 24px;
+		font-weight: bold;
+		padding: 8px 20px;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+	.card-group {
+		flex-direction: row;
+		text-align: center
+	}
+
+	.eighty {
+		margin-top: 10px;
+		width: 50%;
+	}
+}
+
+@media only screen and (min-width: 1224px) {
+	.card-group {
+		flex-direction: row;
+		text-align: center
+	}
+
+	.eighty {
+		margin-top: 10px;
+		width: 50%;
+	}
+}
+
+@media only screen and (min-width: 1824px) {
+	.card-group {
+		flex-direction: row;
+		text-align: center
+	}
+
+	.eighty {
+		margin-top: 10px;
+		width: 50%;
+	}
+}
