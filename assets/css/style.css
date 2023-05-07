@@ -197,7 +197,7 @@ p.boldy.main {
 	border-radius: 6px;
 	display: inline-block;
 	cursor: pointer;
-	font-family: 'Courier New';
+	font-family: var(--font-secund);
 	font-size: 1px;
 	font-weight: bold;
 	padding: 5px 30px;
