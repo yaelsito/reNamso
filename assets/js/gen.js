@@ -1,5 +1,5 @@
 /*
-reNamso v1 is th new and modern Namso CCGEN.
+reNamso v1.5 is th new and modern Namso CCGEN.
 RE-WRITED BY YAEL MASSIEU.
 Telegram: @yaelmassieu
 Portfolio: https://yael.pages.dev/
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('ccpN').addEventListener('change', fillter)
   document.getElementById('cleanText').addEventListener('click', cleanText)
 })
-function fillter () {
+function fillter() {
   const bin = document.getElementById('ccpN').value
   let maxInputCC
   const ccBrand = chkCard(bin)
@@ -46,7 +46,7 @@ const unilenS = (aS, ul, fc = '0', p = 0) => {
   }
   return rS
 }
-function darkside (p1, tr) {
+function darkside(p1, tr) {
   tr = tr || 1
   const ccghm = Math.min(Math.max(parseInt(document.getElementById('ccghm').value), 1), 100)
   let out = ''
@@ -85,8 +85,8 @@ function darkside (p1, tr) {
         }
         const eccv = (document.getElementById('eccv').value === 'rnd' && document.getElementById('ccvi').checked)
           ? ((cdif.startsWith('34') || cdif.startsWith('37'))
-              ? (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)
-              : (Math.floor(Math.random() * (998 - 112 + 1)) + 112))
+            ? (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)
+            : (Math.floor(Math.random() * (998 - 112 + 1)) + 112))
           : document.getElementById('eccv').value
         out += `${formatPrefix}${cdif}${expDate}${(document.getElementById('ccvi').checked) ? ('|' + eccv) : ''}${(document.getElementById('ccbank').checked) ? ('|' + cn) : ''}\n`
       } else {
@@ -97,7 +97,7 @@ function darkside (p1, tr) {
     document.getElementById('output2').value = out
   }
 }
-function chkCard (cdi) {
+function chkCard(cdi) {
   const brands = [
     { pattern: /^4/, name: 'Visa' },
     { pattern: /^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[01])/i, name: 'Mastercard' },
@@ -114,7 +114,7 @@ function chkCard (cdi) {
   }
   return 'Unknown'
 }
-function chkCCCksum (cf, cn) {
+function chkCCCksum(cf, cn) {
   const w = [2, 1]
   let ml = 0
   let j = 0
@@ -125,24 +125,25 @@ function chkCCCksum (cf, cn) {
   }
   const ml2 = 10 - (ml % 10)
   const ml1 = (10 - ((ml + ml2) % 10)) % 10
-  return parseInt(cf[cf.length - 1], 10) === ml1
+  return parseInt(cf[cf.length - 1], 10) === ml1 ? ml1 : parseInt(cf[cf.length - 1], 10)
 }
-function chkLCD (cf) {
-  cf = sbtString(cf, '0123456789')
-  let ctd = 0
+function chkLCD(cf) {
+  let ml = 0
+  let j = false
   for (let i = cf.length - 1; i >= 0; i--) {
-    let cdg = parseInt(cf[i], 10)
-    if ((cf.length - i) % 2 === 0) {
-      cdg *= 2
-      if (cdg > 9) {
-        cdg -= 9
+    let m = parseInt(cf[i], 10)
+    if (j) {
+      m *= 2
+      if (m > 9) {
+        m -= 9
       }
     }
-    ctd += cdg
+    ml += m
+    j = !j
   }
-  return (ctd % 10) === 0
+  return (ml % 10) === 0
 }
-function sbtString (s1, s2) {
+function sbtString(s1, s2) {
   let ous = ''
   for (let i = 0; i < s1.length; i++) {
     const c1 = s1.charAt(i)
@@ -151,7 +152,7 @@ function sbtString (s1, s2) {
   }
   return ous
 }
-function sbtStringSpRnd (s1, s2, bS = '0123456789') {
+function sbtStringSpRnd(s1, s2, bS = '0123456789') {
   let ous = ''
   for (let i = 0; i < s1.length; i++) {
     const c1 = s1.charAt(i)
