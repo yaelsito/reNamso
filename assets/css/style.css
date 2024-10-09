@@ -1,230 +1,281 @@
 /*
-reNamso v1 is th new and modern Namso CCGEN.
+reNamso v2.0 is th new and modern Namso CCGEN.
 RE-WRITED BY YAEL MASSIEU.
-Telegram: @yaelmassieu
+Instagram: @is.leay
 Portfolio: https://yael.pages.dev/
 */
+
+/* Default colors on DARK MODE */
 :root {
-	color-scheme: dark;
-	--princi: #212121;
-	--secund: #0699E2;
-	--label: #2B2B35;
-	--font-princi: 'Orbitron', sans-serif;
-	--font-secund: 'Poppins', sans-serif;
-	--rg1: rgba(0, 0, 0, .075);
-	--rg2: rgba(30, 162, 228, 1);
-	--info: #96D3F2;
+    color-scheme: dark;
+    --main: #212121;
+    --contrast: #0699E2;
+    --label: #2B2B35;
+    --mainFont: 'Orbitron', sans-serif;
+    --customFont: 'Poppins', sans-serif;
+    --rg1: rgba(0, 0, 0, .075);
+    --rg2: rgba(30, 162, 228, 1);
+    --info: #96D3F2;
+}
+
+/* Light Mode */
+body.light-mode {
+    color-scheme: light;
+    --main: #DEE4E7;
+    --contrast: #212121;
+    --label: #f0f0f0;
+    --info: #2B2B35;
+    --mainLightBlue: #0699E2;
+
+    #theme-toggle {
+        color: var(--mainLightBlue);
+    }
+
+    .boldy {
+        color: var(--mainLightBlue);
+    }
+
+    p.boldy.info {
+        color: var(--info);
+        font-weight: 700;
+    }
+
+    p.boldy.main {
+        color: var(--mainLightBlue);
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .Ilabel {
+        background-color: var(--mainLightBlue);
+        color: var(--label);
+    }
+
+    .input_text {
+        background-color: var(--label);
+        color: var(--mainLightBlue);
+    }
+
+    #cards {
+        color: var(--mainLightBlue);
+    }
+
+    .textarea {
+        background-color: var(--label);
+        border-bottom: 2px solid var(--mainLightBlue);
+        border-color: var(--mainLightBlue);
+        box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+        width: 100%;
+        color: var(--contrast);
+    }
+
+    .Lbutton {
+        background: linear-gradient(to bottom, var(--mainLightBlue) 5%, var(--mainLightBlue) 100%);
+        background-color: var(--mainLightBlue);
+        border: 1px solid var(--contrast);
+        color: var(--label);
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: inset 0 1px 1px var(--rg1), 0 0 15px var(--rg2);
+    }
+
+    .Lbutton:hover,
+    .Lbutton:focus,
+    .Lbutton:active,
+    .Lbutton.active,
+    .open>.dropdown-toggle.Lbutton {
+        box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+    }
+
+    .Lbutton:active {
+        position: relative;
+        top: 1px;
+    }
+
+    .clean::before,
+    .cleanit::before {
+        color: var(--mainLightBlue);
+    }
 }
 
 body {
-	margin: 0;
-	background: var(--princi);
-	background-size: cover;
-	background-repeat: no-repeat;
+    margin: 0;
+    background: var(--main);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--contrast);
+}
 
 header {
-	color: var(--secund);
+    color: var(--contrast);
 }
 
 a {
-	color: var(--info);
+    color: var(--info);
 }
 
 .title {
-	text-align: center;
-	font-family: var(--font-princi);
-	text-shadow: 0px 0px 20px #FFFFFF;
-	font-size: 2rem;
-	margin-top: 25px;
-	margin-bottom: 3px;
-	text-shadow: 0px 0px 15px var(--secund);
+    text-align: center;
+    font-family: var(--mainFont);
+    font-size: 2rem;
+    margin: 25px 0 3px;
 }
 
-
 .title img {
-	display: inline-block;
-	height: 2.5rem;
-	vertical-align: middle;
+    display: inline-block;
+    height: 2.5rem;
+    vertical-align: middle;
 }
 
 .hh-title {
-	text-align: center;
-	font-family: var(--font-princi);
-	font-size: 10;
-	margin-bottom: 5px;
+    text-align: center;
+    font-family: var(--mainFont);
+    font-size: 12px;
+    margin-bottom: 5px;
 }
 
 #cards {
-	text-align: center;
-	color: #ebebeb;
+    text-align: center;
+    color: #ebebeb;
 }
 
-
 form#console {
-	text-align: center;
+    text-align: center;
 }
 
 .Ilabel,
 .input_text,
 .input_texts {
-	display: -webkit-inline-box;
-	font-family: var(--font-secund);
-	font-size: 16px;
+    display: inline-flex;
+    font-family: var(--customFont);
+    font-size: 16px;
 }
 
 .Ilabel {
-	background-color: #222222;
-	padding: 3px;
-	padding-right: 5px;
-	border-radius: 5px 0 0 5px;
-	border-right: 1px solid var(--secund);
-	border-left: 1px solid var(--secund);
-	border-top: 1px solid var(--secund);
-	color: var(--secund);
-	border-color: var(--secund);
-	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
-	box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
+    background-color: #222222;
+    padding: 3px 5px 3px 3px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid var(--contrast);
+    border-right: none;
+    color: var(--contrast);
+    box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
+    align-items: center;
+}
+
+.Ilabel i {
+    margin-right: 3px;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 .input_text {
-	padding: 3px;
-	border: 0;
-	border-bottom: 1px solid var(--secund);
-	border-right: 1px solid var(--secund);
-	border-top: 1px solid var(--secund);
-	border-radius: 0 5px 5px 0;
-	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
-	box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
-	vertical-align: bottom;
-	outline: none;
-	font-size: 16px;
-	color: #ebebeb;
-	background-color: var(--label);
+    padding: 3px;
+    border: 1px solid var(--contrast);
+    border-radius: 0 5px 5px 0;
+    box-shadow: inset 0 1px 1px var(--rg1), 0 0 10px var(--rg2);
+    vertical-align: bottom;
+    outline: none;
+    font-size: 16px;
+    color: #ebebeb;
+    background-color: var(--label);
 }
 
 select.input_text {
-	margin-left: -3px;
-	font-size: 16px;
-	background-color: var(--label);
+    margin-left: -3px;
+    font-size: 16px;
+    background-color: var(--label);
 }
 
 .p {
-	display: block;
-	margin-bottom: 12px;
+    display: block;
+    margin-bottom: 12px;
 }
 
 p.boldy {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 p.boldy.info {
-	color: var(--info);
-	font-weight: 700;
+    color: var(--info);
+    font-weight: 700;
 }
 
 p.boldy.main {
-	font-size: 17px;
-	font-weight: 700;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .s {
-	margin-left: -5px;
-	background: white;
-	padding: 3px;
-	background: var(--label);
+    margin-left: -5px;
+    background: var(--label);
+    padding: 3px;
 }
 
 .input_text>label {
-	cursor: pointer;
-}
-
-.clean {
-	background: var(--princi) url('../img/close.png') 0 0 no-repeat;
-	border-radius: 50%;
-	cursor: pointer;
-	height: 24px;
-	width: 24px;
-	float: right;
-	margin: 0 -12px -12px 0;
-	position: relative;
-	transition: all 0.5s;
-	-webkit-transition: all .5s;
-}
-
-.clean:hover {
-	background: var(--princi) url('../img/close.png') 0 0 no-repeat;
-	-webkit-transform: rotate(360deg);
-	transform: rotate(360deg);
-}
-
-.cleanit {
-	background: var(--princi) url('../img/close.png') 0 0 no-repeat;
-	border-radius: 50%;
-	cursor: pointer;
-	height: 24px;
-	width: 24px;
-	float: right;
-	position: relative;
-	transition: all 0.5s;
-	-webkit-transition: all .5s;
-}
-
-.cleanit:hover {
-	background: rgba(0, 0, 0, 0.87) url('../img/close.png') 0 0 no-repeat;
-	-webkit-transform: rotate(360deg);
-	transform: rotate(360deg);
+    cursor: pointer;
 }
 
 .eighty {
-	margin-top: 10px;
-	width: 50%;
+    margin-top: 10px;
+    width: 50%;
+    position: relative;
 }
 
-
-.Lbutton {
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, var(--princi)), color-stop(1, var(--princi)));
-	background: -moz-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: -webkit-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: -o-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: -ms-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: linear-gradient(to bottom, var(--princi) 5%, var(--princi) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--princi)', endColorstr='var(--princi)', GradientType=0);
-	background-color: var(--princi);
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	display: inline-block;
-	cursor: pointer;
-	font-family: var(--font-secund);
-	font-size: 1px;
-	font-weight: bold;
-	padding: 5px 30px;
-	text-decoration: none;
+.clean,
+.cleanit {
+    background: linear-gradient(to bottom, var(--main) 5%, var(--main) 100%);
+    border: 1px solid var(--contrast);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: -11px;
+    right: -16px;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 1px var(--rg1), 0 0 15px var(--rg2);
 }
 
-.Lbutton:hover {
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, var(--princi)), color-stop(1, var(--princi)));
-	background: -moz-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: -webkit-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: -o-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: -ms-linear-gradient(top, var(--princi) 5%, var(--princi) 100%);
-	background: linear-gradient(to bottom, var(--princi) 5%, var(--princi) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--princi)', endColorstr='var(--princi)', GradientType=0);
-	background-color: var(--princi);
+.clean::before,
+.cleanit::before {
+    content: "\f00d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--contrast);
 }
 
-.Lbutton:active {
-	position: relative;
-	top: 1px;
+.clean:hover::before,
+.cleanit:hover::before {
+    transform: rotate(360deg);
+    transition: transform 0.5s;
 }
 
 .Lbutton {
-	border: 1px solid var(--secund);
-	color: var(--secund);
-	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 15px var(--rg2);
-	box-shadow: inset 0 1px 1px var(--rg1), 0 0 15px var(--rg2);
+    background: linear-gradient(to bottom, var(--main) 5%, var(--main) 100%);
+    background-color: var(--main);
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: var(--customFont);
+    font-size: 1px;
+    font-weight: bold;
+    padding: 5px 30px;
+    text-decoration: none;
+    border: 1px solid var(--contrast);
+    color: var(--contrast);
+    box-shadow: inset 0 1px 1px var(--rg1), 0 0 15px var(--rg2);
 }
 
 .Lbutton:hover,
@@ -232,181 +283,92 @@ p.boldy.main {
 .Lbutton:active,
 .Lbutton.active,
 .open>.dropdown-toggle.Lbutton {
-	color: var(--secund);
-	border-color: var(--secund);
-	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
-	box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+    box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
 }
 
+.Lbutton:active {
+    position: relative;
+    top: 1px;
+}
 
 .textarea {
-	background-color: var(--label);
-	border-bottom: 2px solid #2A203F;
-	border-color: var(--secund);
-	-webkit-box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
-	box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
-	width: 100%;
-	color: #ebebeb;
-	font-size: 16px;
-	margin-bottom: 10px;
-	outline: none;
-	font-family: var(--font-secund);
-	font-weight: 500;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	text-align: center;
+    background-color: var(--label);
+    border-bottom: 2px solid #2A203F;
+    border-color: var(--contrast);
+    box-shadow: inset 0 1px 1px var(--rg1), 0 0 20px var(--rg2);
+    width: 100%;
+    color: #ebebeb;
+    font-size: 16px;
+    margin-bottom: 10px;
+    outline: none;
+    font-family: var(--customFont);
+    font-weight: 500;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
 }
 
 .textarea::-webkit-scrollbar {
-	width: 5px;
+    width: 5px;
 }
 
 .textarea::-webkit-scrollbar-thumb {
-	background: var(--secund);
+    background: var(--contrast);
 }
-
 
 footer {
-	text-align: center;
-	font-family: var(--font-princi);
-	color: var(--secund);
-	font-size: 13px;
+    text-align: center;
+    font-family: var(--mainFont);
+    color: var(--contrast);
+    font-size: 13px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	.eighty {
-		margin-top: 5px;
-		width: 80%;
-	}
+/* Responsive */
 
-	.textarea {
-		font-size: 13px;
-	}
+@media only screen and (max-width: 480px) {
+    .eighty {
+        margin-top: 5px;
+        width: 80%;
+    }
 
-	.Lbutton {
-		font-size: 13px;
-		font-weight: bold;
-		padding: 8px 17px;
-	}
-}
+    .textarea {
+        font-size: 13px;
+    }
 
-@media only screen and (min-width: 321px) {
-	.eighty {
-		margin-top: 5px;
-		width: 80%;
-	}
-
-	.textarea {
-		font-size: 13px;
-	}
-
-	.Lbutton {
-		font-size: 13px;
-		font-weight: bold;
-		padding: 8px 17px;
-	}
-}
-
-@media only screen and (max-width: 320px) {
-	.eighty {
-		margin-top: 5px;
-		width: 80%;
-	}
-
-	.textarea {
-		font-size: 13px;
-	}
-
-	.Lbutton {
-		font-size: 13px;
-		font-weight: bold;
-		padding: 8px 17px;
-	}
+    .Lbutton {
+        font-size: 13px;
+        font-weight: bold;
+        padding: 8px 17px;
+    }
 }
 
 @media only screen and (min-width: 481px) {
-	.eighty {
-		margin-top: 5px;
-		width: 80%;
-	}
+    .eighty {
+        margin-top: 5px;
+        width: 80%;
+    }
 
-	.textarea {
-		font-size: 16px;
-	}
+    .textarea {
+        font-size: 16px;
+    }
 
-	.Lbutton {
-		font-size: 24px;
-		font-weight: bold;
-		padding: 8px 20px;
-	}
+    .Lbutton {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 8px 20px;
+    }
 }
 
-@media only screen and (max-width: 480px) {
-	.eighty {
-		margin-top: 5px;
-		width: 80%;
-	}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait),
+only screen and (min-width: 1224px),
+only screen and (min-width: 1824px) {
+    .card-group {
+        flex-direction: row;
+        text-align: center;
+    }
 
-	.textarea {
-		font-size: 13px;
-	}
-
-	.Lbutton {
-		font-size: 13px;
-		font-weight: bold;
-		padding: 8px 17px;
-	}
-}
-
-@media only screen and (min-device-width: 480px) and (max-device-width: 767px) {
-	.eighty {
-		margin-top: 5px;
-		width: 80%;
-	}
-
-	.textarea {
-		font-size: 16px;
-	}
-
-	.Lbutton {
-		font-size: 24px;
-		font-weight: bold;
-		padding: 8px 20px;
-	}
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-	.card-group {
-		flex-direction: row;
-		text-align: center
-	}
-
-	.eighty {
-		margin-top: 10px;
-		width: 50%;
-	}
-}
-
-@media only screen and (min-width: 1224px) {
-	.card-group {
-		flex-direction: row;
-		text-align: center
-	}
-
-	.eighty {
-		margin-top: 10px;
-		width: 50%;
-	}
-}
-
-@media only screen and (min-width: 1824px) {
-	.card-group {
-		flex-direction: row;
-		text-align: center
-	}
-
-	.eighty {
-		margin-top: 10px;
-		width: 50%;
-	}
+    .eighty {
+        margin-top: 10px;
+        width: 50%;
+    }
 }
